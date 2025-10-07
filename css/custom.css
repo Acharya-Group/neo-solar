@@ -1804,6 +1804,11 @@ header.main-header .header-sticky.active{
 	margin-right: 30px;
 }
 
+.gallery_img{
+	object-fit: contain;
+	max-height: 300px;
+}
+
 .footer-logo{
 	margin-bottom: 30px;
 }
