@@ -143,7 +143,7 @@
 	<!-- Page Header End -->
     
     <!-- Page Contact Us Start -->
-    <div class="page-contact-us">
+    <section class="page-contact-us">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -214,46 +214,44 @@
                         </div>
                         <!-- Content Form Content End -->
 
-                        <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.5s">
-                            <div class="row">
-                                <div class="form-group col-md-4 mb-4">
-                                    <label>your name</label>
-                                    <input type="text" name="name" class="form-control" id="fullname" placeholder="Enter Full Name" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
 
-                                <div class="form-group col-md-4 mb-4">
-                                    <label>your email</label>
-                                    <input type="email" name ="email" class="form-control" id="email" placeholder="Enter Email" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-
-                                <div class="form-group col-md-4 mb-4">
-                                    <label>phone</label>
-                                    <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter Phone Number" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-
-                                <div class="form-group col-md-12 mb-4">
-                                    <label>message</label>
-                                    <textarea name="msg" class="form-control" id="msg" rows="7" placeholder="Type Message" required></textarea>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-
-                                <div class="col-lg-12">
-                                    <div class="contact-form-btn">
-                                        <button type="submit" class="btn-default">send message</button>
-                                        <div id="msgSubmit" class="h3 hidden"></div>
+                            <form id="contactForm" action="https://formsubmit.co/sumitkhan.dhana@gmail.com" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="row">
+                                    <div class="form-group col-md-4 mb-4">
+                                        <label>your name</label>
+                                        <input type="text" name="name" class="form-control" id="fullname" placeholder="Enter Full Name" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="form-group col-md-4 mb-4">
+                                        <label>your email</label>
+                                        <input type="email" name ="email" class="form-control" id="email" placeholder="Enter Email" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="form-group col-md-4 mb-4">
+                                        <label>phone</label>
+                                        <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter Phone Number" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="form-group col-md-12 mb-4">
+                                        <label>message</label>
+                                        <textarea name="msg" class="form-control" id="msg" rows="7" placeholder="Type Message" required></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="contact-form-btn">
+                                            <button type="submit" class="btn-default">send message</button>
+                                            <div id="msgSubmit" class="h3 hidden"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                     
                     </div>
                     <!-- Contact Form end -->
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Page Contact Us End -->
 
     <!-- Google Map starts -->
@@ -440,6 +438,21 @@
         const getYear = new Date().getFullYear();
         document.getElementById("year").innerHTML = getYear;
     </script>
+    <script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault(); 
+    alert("Your message has been sent successfully!");
+
+    // Hide after 3 seconds
+    setTimeout(() => {
+        successMsg.style.display = "none";
+    }, 3000);
+
+    // Clear form fields
+    this.reset();
+});
+</script>
+
 </body>
 
 
