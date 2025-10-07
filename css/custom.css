@@ -1826,7 +1826,7 @@ header.main-header .header-sticky.active{
 
 .footer-social-links ul li{
     display: inline-block;
-    margin-right: 25px;
+    margin-right: 10px;
 }
 
 .footer-social-links ul li:last-child{
