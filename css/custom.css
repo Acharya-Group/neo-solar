@@ -5299,3 +5299,33 @@ header.main-header .header-sticky.active{
 		font-size: 30px;
 	}
 }
+
+
+/* subtle vibrate */
+@keyframes bounce-then-rotate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-10px) rotate(0deg); /* bounce up */
+  }
+  40% {
+    transform: translateY(0) rotate(0deg);     /* back to ground */
+  }
+  60% {
+    transform: translateY(0) rotate(20deg);    /* rotate right */
+  }
+  80% {
+    transform: translateY(0) rotate(-20deg);   /* rotate left */
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);     /* reset */
+  }
+}
+
+.text_animation {
+  display: inline-block;
+  animation: bounce-then-rotate 2s ease-in-out infinite;
+  transform-origin: center;
+  animation-delay: 0.002s; 
+}

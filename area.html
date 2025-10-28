@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Your existing head content -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="author" content="Awaiken">
+    <title>Neo Solar</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap"
+        rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/slicknav.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link href="css/all.css" rel="stylesheet" media="screen">
+    <link href="css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/mousecursor.css">
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+
+  <style>
+    .step { display: none; }
+    .step.active { display: block; }
+    .tab-area .nav-link { cursor: pointer; }
+    .tab-area .nav-link.active { background-color:#96D055; }
+    .panel-card { transition: box-shadow .15s; }
+    .panel-card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+    .small-note { font-size: .9rem; color: #6b7280; }
+    .file-error { color: #dc3545; font-size: 0.875rem; margin-top: 0.25rem; }
+    .success-message { 
+        display: none; 
+        background: #d4edda; 
+        color: #155724; 
+        padding: 15px; 
+        border-radius: 5px; 
+        margin: 20px 0; 
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Your existing HTML structure remains the same -->
+    <div class="preloader">
+        <div class="loading-container">
+            <div class="loading"></div>
+            <div id="loading-icon"><img src="images/logo.png" alt="logo"></div>
+        </div>
+    </div>
+
+    <div class="topbar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-5">
+                    <div class="topbar-contact-info">
+                     <ul>
+  <li>
+    <a href="tel:+919991333327">
+      <i class="fa-solid fa-phone"></i> +91 9991333327
+    </a>
+  </li>
+  <li>
+    <a href="mailto:neosolarco@gmail.com">
+      <i class="fa-regular fa-envelope"></i> neosolarco@gmail.com
+    </a>
+  </li>
+</ul>
+                    </div>
+                </div>
+              <div class="col-md-5 justify-content-center mb-3 mb-md-0 col-lg-4 d-flex align-items-center">
+    <span class="me-2 bg-white rounded-circle p-1 d-flex justify-content-center align-items-center">
+        <img height="25" width="25" src="./images/green-energy.png" alt="green energy">
+    </span>
+    <p class="text-white fw-bold mb-0">The Future is Solar</p>
+</div>
+                <div class="col-md-2 col-lg-3">
+                    <div class="topbar-social-links">
+                        <ul>
+                            <li><a target="_blank" href="https://www.facebook.com/neosolarin"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a target="_blank" href="https://wa.me/919991333327"><i class="fa-brands fa-whatsapp"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header position-sticky top-0 shadow-sm">
+        <div class="header-sticky">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <img height="50" src="images/logo.png" alt="Logo">
+                    </a>
+                    <div class="collapse navbar-collapse main-menu">
+                        <div class="nav-menu-wrapper">
+                            <ul class="navbar-nav mr-auto" id="menu">
+                                <li class="nav-item "><a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="about.html">about us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="service.html">services</a></li>                              
+                                <li class="nav-item"><a class="nav-link" href="gallery.html">gallery</a></li>                              
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                                <li class="nav-item"><a class="nav-link text_animation" href="area.html">New Solar</a></li>
+                                <li class="nav-item highlighted-menu"><a class="nav-link" href="contact.html">Get a Quote</a></li>
+                            </ul>
+                        </div>
+                        <div class="header-btn d-inline-flex">
+                            <a href="contact.html" class="btn-default d-flex gap-2 align-items-center"> <span class="bg-white h-100 rounded-circle"><img height="25" width="25" src="./images/green-energy.png" alt="green energy"></span>Get a Quote</a>
+                        </div>
+                    </div>
+                    <div class="navbar-toggle"></div>
+                </div>
+            </nav>
+            <div class="responsive-menu"></div>
+        </div>
+    </header>
+
+  <div class="container py-5">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title mb-3">Solar Panel Calculator</h2>
+       <p class="small-note">Complete the steps below to estimate the required system size and cost. You will be redirected to contact page to finalize your request.</p>
+
+        <!-- Progress -->
+        <div class="mb-4">
+          <div class="progress" style="height:12px;">
+            <div id="progressBar" class="progress-bar" role="progressbar" style="width:0%"></div>
+          </div>
+          <div class="d-flex justify-content-between mt-2">
+            <small>Step <span id="currentStepNum">1</span> of 4</small>
+            <small id="progressPercent">0%</small>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <form id="solarForm">
+          <!-- STEP 1 -->
+          <div id="step1" class="step active">
+            <h4 class="mb-3">1. Select Area & Billing</h4>
+            <div class="mb-3 tab-area">
+              <ul class="nav nav-pills mb-3" id="areaTabs">
+                <li class="nav-item"><a class="nav-link active" data-area="Residential">Residential</a></li>
+                <li class="nav-item"><a class="nav-link" data-area="Industrial">Industrial</a></li>
+                <li class="nav-item"><a class="nav-link" data-area="Common Building">Common Building</a></li>
+                <li class="nav-item"><a class="nav-link" data-area="Ground Mounted">Ground Mounted</a></li>
+              </ul>
+              <input type="hidden" name="area_type" id="area_type" value="Residential">
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label">Pincode</label>
+                <input name="pincode" id="pincode" type="text" pattern="\d{6}" class="form-control" placeholder="eg. 302021" required>
+                <div class="form-text">6 digit PIN (India)</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Billing Cycle</label>
+                <select name="billing_cycle" id="billing_cycle" class="form-select" required>
+                  <option value="1month">1 month</option>
+                  <option value="2month">2 month</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Electricity Bill Amount (₹)</label>
+                <input name="bill_amount" id="bill_amount" type="number" min="0" class="form-control" placeholder="eg. 5000" required>
+                <div class="form-text">Enter your bill for selected billing cycle.</div>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <button type="button" class="btn btn-success" id="calcBtn">Calculate System</button>
+            </div>
+
+            <hr class="my-4">
+
+            <div id="calcResult" style="display:none;">
+              <h5>Estimated System</h5>
+              <p>
+                <strong>Monthly bill:</strong> ₹<span id="resBill">0</span> &nbsp;|&nbsp;
+                <strong>Estimated required capacity:</strong> <span id="resKW">0</span> kW
+              </p>
+              <p class="small-note">
+                Calculation note: this calculator uses a conversion baseline of <strong>₹1000 → 1kW</strong>.
+                That means required_kW = bill_amount × (4.96 / 5000). Adjust baseline in code if you have different data.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div id="step2" class="step">
+            <h4>2. Panel Selection</h4>
+            <p class="small-note mb-3">Choose a panel brand and model. Prices are approximate — replace with your supplier prices.</p>
+
+            <div class="row" id="panelsContainer"></div>
+
+            <div class="mt-3">
+              <p class="mb-0"><strong>Panels needed:</strong> <span id="panelsNeeded">0</span></p>
+              <p><strong>Estimated panel cost:</strong> ₹<span id="panelsCost">0</span></p>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div id="step3" class="step">
+            <h4>3. Panel Type & Options</h4>
+            <p>Select desired mounting type and inverter preference (optional).</p>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Mounting Type</label>
+                <select name="mounting_type" class="form-select">
+                  <option>Rooftop (Tilt)</option>
+                  <option>Ground Mounted</option>
+                  <option>Carport</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Inverter Preference</label>
+                <select name="inverter_pref" class="form-select">
+                  <option>String Inverter</option>
+                  <option>Micro Inverter</option>
+                  <option>Hybrid Inverter</option>
+                </select>
+              </div>
+            </div>
+            <div class="mt-3">
+              <label class="form-label">Any additional notes</label>
+              <textarea name="additional_notes" class="form-control" rows="3" placeholder="Optional notes..."></textarea>
+            </div>
+          </div>
+
+          <!-- STEP 4 - Summary Only -->
+          <div id="step4" class="step">
+            <h4 class="mb-2">4. Review & Contact</h4>
+            <div class="alert alert-info">
+              <strong>Almost done!</strong> Review your solar system calculation below and proceed to contact us for a detailed quote.
+            </div>
+          </div>
+
+          <!-- SUMMARY & NAV -->
+          <div class="mt-4">
+            <div id="summaryBox" class="p-3 mb-3 bg-white border rounded" style="display:none;">
+              <h5>Summary</h5>
+              <div id="summaryContent"></div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <div>
+                <button type="button" id="prevBtn" class="btn btn-outline-secondary" disabled>← Previous</button>
+              </div>
+              <div>
+                <button type="button" id="nextBtn" class="btn btn-success">Next →</button>
+                <button type="button" id="contactBtn" class="btn btn-success" style="display:none;">Proceed to Contact →</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div id="responseMessage" class="mt-3"></div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Your existing footer remains the same -->
+   <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <div class="about-footer">
+                        <div class="footer-logo">
+                            <figure class="bg-white p-2 rounded d-inline-flex">
+                                <img width="130" height="60" src="images/logo.png" alt="logo">
+                            </figure>
+                        </div>
+                        <div class="footer-content">
+                            <p>At Neo Solar, we combine innovation and efficiency to help you switch to clean energy. Our high-performance solar solutions are engineered to reduce your costs and your carbon footprint.
+                            </p>
+                        </div>
+                        <div class="footer-social-links">
+                            <ul>
+                              <li><a target="_blank" href="https://www.facebook.com/neosolarin"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a target="_blank" href="https://wa.me/919991333327"><i class="fa-brands fa-whatsapp"></i></a></li>  
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3">
+                    <div class="footer-quick-links">
+                        <h2>useful links</h2>
+                        <ul>
+                           <li><a href="index.html">home</a></li>
+                            <li><a href="about.html">about us</a></li>
+                            <li><a href="service.html">services</a></li>
+                            <li><a href="gallery.html">gallery</a></li>
+                            <li><a href="contact.html">contact us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-contact-details">
+                        <h2>contact</h2>
+                        <div class="footer-contact-box">
+                            <a href="tel:+919991333327" class="footer-info-box d-flex">
+                                <div class="icon-box">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <p>+91 9991333327</p>
+                            </a>
+                            <a href="mailto:neosolarco@gmail.com" class="footer-info-box d-flex">
+                                <div class="icon-box">
+                                    <i class="fa-solid fa-envelope-open-text"></i>
+                                </div>
+                                <p>neosolarco@gmail.com</p>
+                            </a>
+                            <div class="footer-info-box">
+                                <div class="icon-box">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <p>Plot No. 01, Near Blessing Marriage Palace, Hisar-125001 (Haryana) India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-5">
+                    <div class="footer-newsletter">
+                        <h2>Our Location</h2>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d971.187698752994!2d75.71916942121233!3d29.127885627460337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391233004103a3bd%3A0xfb5ce913cb462f40!2sNeo%20Solar!5e1!3m2!1sen!2sin!4v1759811811756!5m2!1sen!2sin" width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-copyright-text">
+                            <p>Copyright ©<span id="year"></span>  Neo solar. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+ <!-- Your existing scripts -->
+ <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/validator.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/SmoothScroll.js"></script>
+    <script src="js/parallaxie.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/magiccursor.js"></script>
+    <script src="js/SplitText.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/function.js"></script>
+    <script>
+        const getYear = new Date().getFullYear();
+        document.getElementById("year").innerHTML = getYear;
+    </script>
+
+<script>
+    // ---------- Configuration / panels (replace with real prices/wattages) ----------
+    const panels = [
+      { id: 'p1', brand: 'SunPower', model: 'SP-400', watt: 400, price: 13500 },
+      { id: 'p2', brand: 'LG', model: 'LG-370', watt: 370, price: 11800 },
+      { id: 'p3', brand: 'JA Solar', model: 'JA-350', watt: 350, price: 8200 },
+      { id: 'p4', brand: 'Trina', model: 'TR-330', watt: 330, price: 7600 },
+      { id: 'p5', brand: 'Longi', model: 'LGI-410', watt: 410, price: 12900 },
+      { id: 'p6', brand: 'Canadian Solar', model: 'CS-360', watt: 360, price: 9000 },
+    ];
+
+    // Baseline: ₹5000 bill corresponds to 4.96 kW (as given in your message).
+    // So kW_per_inr = 4.96 / 5000 = 0.000992
+    const kW_per_inr = 4.96 / 5000;
+
+    // ---------- State ----------
+    let currentStep = 1;
+    const totalSteps = 4;
+    let chosenPanelId = null;
+    let calculatedKW = 0;
+
+    // ---------- DOM refs ----------
+    const progressBar = document.getElementById('progressBar');
+    const progressPercent = document.getElementById('progressPercent');
+    const currentStepNum = document.getElementById('currentStepNum');
+    const form = document.getElementById("solarForm");
+    const nextBtn = document.getElementById("nextBtn");
+    const contactBtn = document.getElementById("contactBtn");
+
+    // Panels container render
+    const panelsContainer = document.getElementById('panelsContainer');
+
+    function renderPanels() {
+      panelsContainer.innerHTML = '';
+      panels.forEach(p => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 mb-3';
+        col.innerHTML = `
+          <label class="card panel-card p-3 d-block">
+            <input type="radio" name="panel_choice" value="${p.id}" class="form-check-input me-2" ${p.id === chosenPanelId ? 'checked' : ''}>
+            <strong>${p.brand} ${p.model}</strong>
+            <div class="small-note">Watt: ${p.watt}W • Price: ₹${p.price.toLocaleString()}</div>
+            <div class="mt-2">Approx cost per kW (panels only): ₹${((1000 / p.watt) * p.price).toFixed(0)}</div>
+          </label>
+        `;
+        panelsContainer.appendChild(col);
+      });
+
+      // add change listeners
+      document.querySelectorAll('input[name="panel_choice"]').forEach(r => {
+        r.addEventListener('change', e => {
+          chosenPanelId = e.target.value;
+          updatePanelEstimates();
+        });
+      });
+    }
+
+    renderPanels();
+
+    // ---------- Steps navigation ----------
+    const updateProgress = () => {
+      const percent = Math.round((currentStep - 1) / (totalSteps - 1) * 100);
+      progressBar.style.width = percent + '%';
+      progressPercent.textContent = percent + '%';
+      currentStepNum.textContent = currentStep;
+    };
+
+    const showStep = (n) => {
+      for (let i = 1; i <= totalSteps; i++) {
+        const el = document.getElementById('step' + i);
+        if (el) el.classList.toggle('active', i === n);
+      }
+      
+      // Show/hide buttons based on step
+      if (n === totalSteps) {
+        nextBtn.style.display = 'none';
+        contactBtn.style.display = 'inline-block';
+        document.getElementById('summaryBox').style.display = 'block';
+      } else {
+        nextBtn.style.display = 'inline-block';
+        contactBtn.style.display = 'none';
+        document.getElementById('summaryBox').style.display = 'none';
+      }
+      
+      // Prev enabled?
+      document.getElementById('prevBtn').disabled = (n === 1);
+
+      updateProgress();
+    };
+
+    // Next button click handler
+    nextBtn.addEventListener('click', () => {
+      // Basic validation per step
+      if (currentStep === 1) {
+        // Ensure bill is provided and positive
+        const billInput = document.getElementById('bill_amount');
+        if (!billInput.value || parseFloat(billInput.value) < 0) {
+          alert('Please enter a valid bill amount.');
+          billInput.focus();
+          return;
+        }
+        // if calculation not yet run, run it
+        if (!document.getElementById('calcResult').style.display || document.getElementById('calcResult').style.display === 'none') {
+          document.getElementById('calcBtn').click();
+        }
+      }
+      if (currentStep === 2) {
+        // ensure a panel is chosen
+        const chosen = document.querySelector('input[name="panel_choice"]:checked');
+        if (!chosen) {
+          alert('Please choose a panel model to proceed.');
+          return;
+        }
+      }
+
+      if (currentStep < totalSteps) {
+        currentStep++;
+        if (currentStep === totalSteps) populateSummary();
+        showStep(currentStep);
+      }
+    });
+
+    // Contact button click handler - redirect to contact page
+    contactBtn.addEventListener('click', () => {
+      // Store all form data in localStorage to use on contact page
+      const formData = collectFormData();
+      localStorage.setItem('solarCalculatorData', JSON.stringify(formData));
+      
+      // Redirect to contact page
+      window.location.href = "contact.html";
+    });
+
+    // Previous button click handler
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+
+    showStep(currentStep);
+
+    // ---------- Area tabs ----------
+    document.querySelectorAll('#areaTabs .nav-link').forEach(a => {
+      a.addEventListener('click', () => {
+        document.querySelectorAll('#areaTabs .nav-link').forEach(x => x.classList.remove('active'));
+        a.classList.add('active');
+        document.getElementById('area_type').value = a.dataset.area;
+      });
+    });
+
+    // ---------- Calculation ----------
+    document.getElementById('calcBtn').addEventListener('click', () => {
+      const billVal = parseFloat(document.getElementById('bill_amount').value || 0);
+      calculatedKW = +(billVal * kW_per_inr).toFixed(3);
+
+      document.getElementById('resBill').textContent = billVal.toFixed(0);
+      document.getElementById('resKW').textContent = calculatedKW.toFixed(3);
+      document.getElementById('calcResult').style.display = 'block';
+
+      // Update panel estimates if panel selected
+      updatePanelEstimates();
+    });
+
+    function updatePanelEstimates() {
+      if (!calculatedKW) {
+        document.getElementById('panelsNeeded').textContent = '0';
+        document.getElementById('panelsCost').textContent = '0';
+        return;
+      }
+      const chosen = document.querySelector('input[name="panel_choice"]:checked');
+      if (!chosen) return;
+      const p = panels.find(x => x.id === chosen.value);
+      if (!p) return;
+
+      const kw = calculatedKW;
+      const wattsNeeded = kw * 1000;
+      const needed = Math.ceil(wattsNeeded / p.watt);
+      const cost = needed * p.price;
+
+      document.getElementById('panelsNeeded').textContent = needed;
+      document.getElementById('panelsCost').textContent = cost.toLocaleString();
+    }
+
+    // ---------- Collect all form data ----------
+    function collectFormData() {
+      const formData = {
+        // Step 1 data
+        area_type: document.getElementById('area_type').value,
+        pincode: document.getElementById('pincode').value,
+        billing_cycle: document.getElementById('billing_cycle').value,
+        bill_amount: document.getElementById('bill_amount').value,
+        estimated_kw: calculatedKW,
+        
+        // Step 2 data
+        panel_choice: document.querySelector('input[name="panel_choice"]:checked')?.value,
+        panels_needed: document.getElementById('panelsNeeded').textContent,
+        panels_cost: document.getElementById('panelsCost').textContent,
+        
+        // Step 3 data
+        mounting_type: document.querySelector('select[name="mounting_type"]').value,
+        inverter_pref: document.querySelector('select[name="inverter_pref"]').value,
+        additional_notes: document.querySelector('textarea[name="additional_notes"]').value,
+        
+        // Timestamp
+        submitted_at: new Date().toISOString()
+      };
+      
+      return formData;
+    }
+
+    // ---------- Summary populate ----------
+    function populateSummary() {
+      const formData = collectFormData();
+      
+      const content = `
+        <ul class="mb-0">
+          <li><strong>Area type:</strong> ${formData.area_type}</li>
+          <li><strong>Pincode:</strong> ${formData.pincode}</li>
+          <li><strong>Billing cycle:</strong> ${formData.billing_cycle}</li>
+          <li><strong>Monthly bill:</strong> ₹${parseFloat(formData.bill_amount).toFixed(0)}</li>
+          <li><strong>Estimated system size:</strong> ${parseFloat(formData.estimated_kw).toFixed(3)} kW</li>
+          <li><strong>Selected Panel:</strong> ${formData.panel_choice || 'None'}</li>
+          <li><strong>Panels needed:</strong> ${formData.panels_needed}</li>
+          <li><strong>Estimated panel cost:</strong> ₹${formData.panels_cost}</li>
+          <li><strong>Mounting Type:</strong> ${formData.mounting_type}</li>
+          <li><strong>Inverter Preference:</strong> ${formData.inverter_pref}</li>
+          ${formData.additional_notes ? `<li><strong>Additional Notes:</strong> ${formData.additional_notes}</li>` : ''}
+        </ul>
+        <div class="mt-3 alert alert-info">
+          <strong>Next:</strong> Click "Proceed to Contact" to send this information to our team and get a detailed quote.
+        </div>
+      `;
+      document.getElementById('summaryContent').innerHTML = content;
+    }
+</script>
+
+</body>
+</html>
