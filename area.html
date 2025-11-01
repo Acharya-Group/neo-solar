@@ -10,7 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="Awaiken">
     <title>Neo Solar</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link
@@ -77,7 +77,7 @@
     <span class="me-2 bg-white rounded-circle p-1 d-flex justify-content-center align-items-center">
         <img height="25" width="25" src="./images/green-energy.png" alt="green energy">
     </span>
-    <p class="text-white fw-bold mb-0">The Future is Solar</p>
+    <p class="text-white fw-bold mb-0">Neo Solar - Solar Made Simple</p>
 </div>
                 <div class="col-md-2 col-lg-3">
                     <div class="topbar-social-links">
@@ -96,7 +96,7 @@
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <a class="navbar-brand" href="index.html">
-                        <img height="50" src="images/logo.png" alt="Logo">
+                         <img  height="90" src="/images/logo.png" alt="Logo">
                     </a>
                     <div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
@@ -107,12 +107,12 @@
                                 <li class="nav-item"><a class="nav-link" href="service.html">services</a></li>                              
                                 <li class="nav-item"><a class="nav-link" href="gallery.html">gallery</a></li>                              
                                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                                <li class="nav-item"><a class="nav-link text_animation" href="area.html">New Solar</a></li>
+                                <li class="nav-item"><a class="nav-link text_animation" href="area.html">Order a New Solar</a></li>
                                 <li class="nav-item highlighted-menu"><a class="nav-link" href="contact.html">Get a Quote</a></li>
                             </ul>
                         </div>
                         <div class="header-btn d-inline-flex">
-                            <a href="contact.html" class="btn-default d-flex gap-2 align-items-center"> <span class="bg-white h-100 rounded-circle"><img height="25" width="25" src="./images/green-energy.png" alt="green energy"></span>Get a Quote</a>
+                            <a href="contact.html" class="btn-default d-flex gap-2 align-items-center"> <span class="bg-white h-100 rounded-circle"><img height="25" width="25" src="./images/green-energy.png" alt="green energy"></span>Follow Us</a>
                         </div>
                     </div>
                     <div class="navbar-toggle"></div>
@@ -376,12 +376,12 @@
 <script>
     // ---------- Configuration / panels (replace with real prices/wattages) ----------
     const panels = [
-      { id: 'p1', brand: 'SunPower', model: 'SP-400', watt: 400, price: 13500 },
-      { id: 'p2', brand: 'LG', model: 'LG-370', watt: 370, price: 11800 },
-      { id: 'p3', brand: 'JA Solar', model: 'JA-350', watt: 350, price: 8200 },
-      { id: 'p4', brand: 'Trina', model: 'TR-330', watt: 330, price: 7600 },
-      { id: 'p5', brand: 'Longi', model: 'LGI-410', watt: 410, price: 12900 },
-      { id: 'p6', brand: 'Canadian Solar', model: 'CS-360', watt: 360, price: 9000 },
+      { id: 'p2', brand: 'Waaree', model: '590', watt: "1k", price: 61000 },
+      { id: 'p3', brand: 'Adani', model: '580', watt: "1k", price: 60000 },
+      { id: 'p4', brand: 'Vikram', model: '580', watt: "1k", price: 60000 },
+      { id: 'p5', brand: 'Jakson', model: '580', watt: "1k", price: 59000 },
+      { id: 'p6', brand: 'Rayzon', model: '580', watt: "1k", price: 58000 },
+      { id: 'p7', brand: 'Utl', model: '580', watt: "1k", price: 58000 },
     ];
 
     // Baseline: ₹5000 bill corresponds to 4.96 kW (as given in your message).
@@ -415,7 +415,7 @@
             <input type="radio" name="panel_choice" value="${p.id}" class="form-check-input me-2" ${p.id === chosenPanelId ? 'checked' : ''}>
             <strong>${p.brand} ${p.model}</strong>
             <div class="small-note">Watt: ${p.watt}W • Price: ₹${p.price.toLocaleString()}</div>
-            <div class="mt-2">Approx cost per kW (panels only): ₹${((1000 / p.watt) * p.price).toFixed(0)}</div>
+            <div class="mt-2">Minimum System Available: 3 kW</div>
           </label>
         `;
         panelsContainer.appendChild(col);
@@ -550,7 +550,7 @@
 
       const kw = calculatedKW;
       const wattsNeeded = kw * 1000;
-      const needed = Math.ceil(wattsNeeded / p.watt);
+      const needed = Math.ceil(wattsNeeded / p.Kil);
       const cost = needed * p.price;
 
       document.getElementById('panelsNeeded').textContent = needed;
