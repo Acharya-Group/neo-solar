@@ -151,7 +151,7 @@ target="_blank" class="btn-default d-flex gap-2 align-items-center"> <span class
         </div>
 
         <!-- FORM -->
-        <form id="solarForm">
+        <form id="solarForm" action="https://formsubmit.co/sumitkhan.dhana@gmail.com" method="POST">
           <!-- STEP 1 -->
           <div id="step1" class="step active">
             <h4 class="mb-3">1. Select Area & Billing</h4>
@@ -250,26 +250,24 @@ target="_blank" class="btn-default d-flex gap-2 align-items-center"> <span class
             <h4>4. Contact Information</h4>
             <p class="small-note mb-3">Please provide your contact details so we can send you the detailed quote.</p>
             
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label class="form-label">Full Name <span class="text-danger">*</span></label>
-                <input type="text" name="full_name" class="form-control" placeholder="Enter your full name" required>
-                <div class="form-error" id="nameError"></div>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Email Address <span class="text-danger">*</span></label>
-                <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
-                <div class="form-error" id="emailError"></div>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Phone Number <span class="text-danger">*</span></label>
-                <input type="tel" name="phone" class="form-control" placeholder="Enter your phone number" required>
-                <div class="form-error" id="phoneError"></div>
-              </div>
-              <div class="col-md-12">
-                <label class="form-label">Message</label>
-                <textarea name="message" class="form-control" rows="4" placeholder="Any additional information or questions..."></textarea>
-              </div>
+            <div class="w-100">
+                <div class="form-group w-100 pe-2 mb-4">
+                    <label>Your Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Enter Full Name" required>
+                </div>
+                <div class="form-group w-100 pe-2 mb-4">
+                    <label>Your Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="Enter Email" required>
+                </div>
+                <div class="form-group w-100 mb-4">
+                    <label>Phone</label>
+                    <input type="text" name="phone" class="form-control" placeholder="Enter Phone Number" required>
+                </div>
+            </div>
+
+            <div class="form-group col-md-12 mb-4">
+                <label>Message</label>
+                <textarea name="message" class="form-control" rows="7" placeholder="Type Message" required></textarea>
             </div>
             
             <div class="mt-4">
@@ -299,6 +297,12 @@ target="_blank" class="btn-default d-flex gap-2 align-items-center"> <span class
               </div>
             </div>
           </div>
+
+          <!-- FormSubmit hidden fields -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_subject" value="New Solar Calculator Request">
+          <input type="hidden" name="_autoresponse" value="Thank you for your solar calculator request! We will contact you shortly with a detailed quote.">
         </form>
 
         <div id="successMessage" class="success-message mt-3">
@@ -540,62 +544,11 @@ target="_blank" class="btn-default d-flex gap-2 align-items-center"> <span class
       }
     });
 
-    // Form submit handler
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Validate step 4 fields
-      const name = document.querySelector('input[name="full_name"]').value;
-      const email = document.querySelector('input[name="email"]').value;
-      const phone = document.querySelector('input[name="phone"]').value;
-      const agreeTerms = document.getElementById('agreeTerms').checked;
-      
-      // Clear previous errors
-      document.getElementById('nameError').textContent = '';
-      document.getElementById('emailError').textContent = '';
-      document.getElementById('phoneError').textContent = '';
-      
-      let isValid = true;
-      
-      if (!name.trim()) {
-        document.getElementById('nameError').textContent = 'Full name is required';
-        isValid = false;
-      }
-      
-      if (!email.trim()) {
-        document.getElementById('emailError').textContent = 'Email is required';
-        isValid = false;
-      } else if (!isValidEmail(email)) {
-        document.getElementById('emailError').textContent = 'Please enter a valid email address';
-        isValid = false;
-      }
-      
-      if (!phone.trim()) {
-        document.getElementById('phoneError').textContent = 'Phone number is required';
-        isValid = false;
-      }
-      
-      if (!agreeTerms) {
-        alert('Please agree to the terms to proceed');
-        isValid = false;
-      }
-      
-      if (!isValid) return;
-      
-      // Collect all form data
-      const formData = collectFormData();
-      
-      // Here you would typically send the data to your server
-      // For now, we'll just show a success message
-      console.log('Form submitted with data:', formData);
-      
-      // Show success message and hide form
-      form.style.display = 'none';
-      successMessage.style.display = 'block';
-      
-      // You can also redirect to a thank you page or send the data to your server
-      // window.location.href = "thank-you.html";
-    });
+    // Form submit handler - REMOVED preventDefault to allow form submission
+    // form.addEventListener('submit', function(e) {
+    //   e.preventDefault();
+    //   ... removed code ...
+    // });
 
     // Email validation helper
     function isValidEmail(email) {
@@ -676,7 +629,7 @@ target="_blank" class="btn-default d-flex gap-2 align-items-center"> <span class
         additional_notes: document.querySelector('textarea[name="additional_notes"]').value,
         
         // Step 4 data
-        full_name: document.querySelector('input[name="full_name"]').value,
+        name: document.querySelector('input[name="name"]').value,
         email: document.querySelector('input[name="email"]').value,
         phone: document.querySelector('input[name="phone"]').value,
         message: document.querySelector('textarea[name="message"]').value,
