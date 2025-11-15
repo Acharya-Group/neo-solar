@@ -1805,8 +1805,13 @@ header.main-header .header-sticky.active{
 }
 
 .gallery_img{
-	object-fit: contain;
+	object-fit: cover !important;
 	max-height: 300px;
+	width: 100%;
+	transition: all 0.3s ease-in-out;
+}
+.gallery_img:hover{
+	transform: scale(1.02);	
 }
 
 .footer-logo{
