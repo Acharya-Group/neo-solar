@@ -235,11 +235,11 @@ body{
 }
 
 .btn-default:hover{
-	color: var(--accent-color);
+	color: var(--white-color);
 }
 
 .btn-default:hover:before{
-    color: var(--accent-color);
+    color: var(--white-color);
     transform: translate(-30px, -50%) rotate(90deg);
 }
 
