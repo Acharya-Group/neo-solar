@@ -39,10 +39,12 @@
 /************************************/	
 
 :root{
-	--primary-color			: #0E0D1B;
+	/* --primary-color			: #006cb5; */
+	--primary-color			: #54af3a;
 	--secondary-color		: #F2F4E9;
 	--text-color			: #737577;
-	--accent-color			: #54af3a;
+	/* --accent-color			: #54af3a; */
+	--accent-color			: #006cb5;
 	--white-color			: #FFFFFF;
 	--divider-color			: #E8E8E8;	
 	--dark-divider-color	: #ffffff20;
