@@ -740,8 +740,6 @@ header.main-header .header-sticky.active{
 }
 
 
-
-
 .hero::before{
 	content: '';
 	position: absolute;
@@ -891,6 +889,9 @@ header.main-header .header-sticky.active{
 	margin-left: 20px;
 }
 
+.footer-logo img{
+	object-fit: contain;
+}
 /************************************/
 /***       05. About Us css	      ***/
 /************************************/
