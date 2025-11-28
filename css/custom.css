@@ -39,12 +39,10 @@
 /************************************/	
 
 :root{
-	/* --primary-color			: #006cb5; */
-	--primary-color			: #54af3a;
+	--primary-color			: #248944;
 	--secondary-color		: #F2F4E9;
 	--text-color			: #737577;
-	/* --accent-color			: #54af3a; */
-	--accent-color			: #006cb5;
+	--accent-color			: #38b6ff;
 	--white-color			: #FFFFFF;
 	--divider-color			: #E8E8E8;	
 	--dark-divider-color	: #ffffff20;
@@ -542,9 +540,9 @@ header.main-header .header-sticky.active{
 
 .main-menu ul li a{
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: 600;
 	padding: 15px 15px !important;
-	color: var(--primary-color);
+	color: black;
 	text-transform: capitalize;
 	transition: all 0.3s ease-in-out;
 }
@@ -724,7 +722,7 @@ header.main-header .header-sticky.active{
 .hero {
   position: relative;
   padding: 170px 0 180px;
-  background-image: url('../images/hero-bg-2.jpg');
+  background-image: url('../images/hero-bg.jpg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
