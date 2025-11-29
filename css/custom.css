@@ -46,6 +46,7 @@
 	--white-color			: #FFFFFF;
 	--divider-color			: #E8E8E8;	
 	--dark-divider-color	: #ffffff20;
+	--color-black           :#000;
 	--error-color			: rgb(230, 87, 87);
 	--default-font			: "Plus Jakarta Sans", sans-serif;
 }
@@ -719,21 +720,21 @@ header.main-header .header-sticky.active{
 /***        04. Hero css	      ***/
 /************************************/
 
-.hero {
-  position: relative;
-  padding: 170px 0 180px;
-  background-image: url('../images/hero-bg.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  max-width: 1920px;
-  margin: 0 auto;
+.hero-slide img{
+min-height: 162px !important;
+object-fit: cover;
+width: 100%;
 }
+
 
 @media (max-width:500px) {
 	  .hero {
 	background-size: cover;
   }
+  .hero-slide img{
+height: 130px !important;
+object-fit: cover;
+}
 	
 }
 
@@ -1809,7 +1810,7 @@ header.main-header .header-sticky.active{
 .main-footer{
 	position: relative;
 	padding: 60px 0 0;
-	background: var(--primary-color) url('../images/footer-squre-bg-img.svg') no-repeat;
+	background: var(--color-black) url('../images/footer-squre-bg-img.svg') no-repeat;
 	background-position: right bottom;
 	background-size: auto;
 }
@@ -5347,4 +5348,11 @@ header.main-header .header-sticky.active{
   animation: bounce-then-rotate 2s ease-in-out infinite;
   transform-origin: center;
   animation-delay: 0.002s; 
+}
+
+@media (max-width:540px) {
+	.nav_logo{
+	max-width: 170px;
+	height: auto;
+}	
 }
