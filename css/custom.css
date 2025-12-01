@@ -5356,3 +5356,70 @@ object-fit: cover;
 	height: auto;
 }	
 }
+
+/* blog page css  */
+/* Section Green Background */
+  .solar-section {
+    background: #e2f5e8; /* Light Green */
+    padding: 60px 0;
+  }
+
+  /* Card Styling */
+  .blog-card {
+    border: none;
+    border-radius: 14px;
+    height: 100%;
+    background: #c5edcf; /* Greenish Card */
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+  }
+
+  /* Hover Animation */
+  .blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Image */
+  .blog-card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.4s ease-in-out;
+  }
+
+  /* Image zoom on hover */
+  .blog-card:hover img {
+    transform: scale(1.08);
+  }
+
+  /* Title */
+  .blog-title {
+    font-weight: 700;
+    color: #1b4d2b;
+    min-height: 60px;
+  }
+
+  /* Description 2-line ellipsis */
+  .blog-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 45px;
+  }
+
+  /* Read More Button */
+  .read-more-btn {
+    background-color: #1b5e20;
+    border: none;
+  }
+
+  .read-more-btn:hover {
+    background-color: #154a18;
+  }
+
+  .text_xs{
+	font-size: 13px;
+  }
