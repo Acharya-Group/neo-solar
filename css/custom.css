@@ -5423,3 +5423,34 @@ object-fit: cover;
   .text_xs{
 	font-size: 13px;
   }
+
+
+  /* project css here */
+#galleryTabs {
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  display: flex;
+  gap: 8px;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+
+#galleryTabs .nav-item {
+  flex: 0 0 auto;
+}
+
+#galleryTabs .nav-link {
+  white-space: nowrap;
+  margin-right: 6px;
+  background: #eaf6ea;
+  color: #198754;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+#galleryTabs .nav-link.active {
+  background: #198754 !important;
+  color: white !important;
+  border-color: #198754 !important;
+}
