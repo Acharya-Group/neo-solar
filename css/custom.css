@@ -63,7 +63,9 @@ body{
 	color: var(--text-color);
 	background-color: var(--white-color);
 }
-
+.bg_secondary{
+	background-color: var(--accent-color) !important;
+}
 p{
 	line-height: 1.6em;
 	margin-bottom: 1.6em;
@@ -5460,4 +5462,9 @@ object-fit: cover;
   background: #198754 !important;
   color: white !important;
   border-color: #198754 !important;
+}
+
+.WhatsApp_chat_btn{
+	position: relative;
+	z-index: 1000;
 }
