@@ -128,6 +128,13 @@ body{
 	position: relative;
 	overflow: hidden;
 }
+.testimonial-slider .image-anime img{
+	display: block;
+	min-width: 60px !important;
+	object-fit: cover;
+	height: 60px !important;
+	transition: all 600ms linear;
+}
 
 .image-anime:after{
 	content: "";
