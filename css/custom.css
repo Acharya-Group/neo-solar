@@ -243,11 +243,11 @@ body{
 }
 
 .btn-default:hover{
-	color: var(--white-color);
+	color: var(--color-black);
 }
 
 .btn-default:hover:before{
-    color: var(--white-color);
+    color: var(--color-black);
     transform: translate(-30px, -50%) rotate(90deg);
 }
 
